@@ -74,6 +74,21 @@ public class DataStore {
         @Override
         public void run(){
             
+            try{
+                
+                in = new BufferedReader(new InputStreamReader(cs.getInputStream()));
+                PrintWriter out = new PrintWriter(cs.getOutputStream(), true);
+                
+                //write login method here
+                
+                
+                
+            } catch (IOException e){
+                System.out.println("error in run method in server");
+            }
+            
+            
+            
            //this is where status codes and user input gathering come from
             
         }
