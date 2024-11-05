@@ -24,6 +24,7 @@ public class DataStore {
             
             ServerSocket ss = new ServerSocket(5000);
             System.out.println("server started");
+            DatabaseManager.connect();
             
             while(true){
                 Socket cs = ss.accept();
@@ -79,7 +80,12 @@ public class DataStore {
                 in = new BufferedReader(new InputStreamReader(cs.getInputStream()));
                 PrintWriter out = new PrintWriter(cs.getOutputStream(), true);
                 
-                //write login method here
+                String username = in.readLine();
+                String password = in.readLine();
+                
+                System.out.println(username + ", " + password);
+                
+                boolean loginSuccess = dbm.init_ConnectionToDB(username, password);
                 
                 
                 
