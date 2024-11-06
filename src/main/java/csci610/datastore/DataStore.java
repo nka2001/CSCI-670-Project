@@ -87,6 +87,11 @@ public class DataStore {
                 
                 boolean loginSuccess = dbm.init_ConnectionToDB(username, password);
                 
+                if(loginSuccess){
+                    out.println("8");
+                } else {
+                    out.println("10");
+                }
                 
                 
             } catch (IOException e){
